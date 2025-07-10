@@ -23,22 +23,6 @@ app = Flask(__name__)
 sent_log = {}
 cooldown_seconds = 30 * 60  # 30 mins
 
-# === 🔁 Bundle Offers ===
-bundle_offers = {
-    50:  {"mb": 1500, "label": "1.5GB, 3hrs"},
-    49:  {"mb": 350,  "label": "350MB, 7 days"},
-    300: {"mb": 2500, "label": "2.5GB, 7 days"},
-    700: {"mb": 6000, "label": "6GB, 7 days"},
-    19:  {"mb": 1000, "label": "1GB, 1hr"},
-    20:  {"mb": 250,  "label": "250MB, 24hrs"},
-    99:  {"mb": 1000, "label": "1GB, 24hrs"},
-    55:  {"mb": 1250, "label": "1.25GB, till midnight"},
-    25:  {"mb": 1000, "label": "1GB, 1hr"},
-    10:  {"mb": 70,   "label": "70MB, 24hrs"},
-    991: {"mb": 2000, "label": "2GB, 24hrs"},
-    501: {"mb": 300,  "label": "300MB, 24hrs"}
-}
-
 # === ✅ Test Root Route ===
 @app.route('/')
 def home():

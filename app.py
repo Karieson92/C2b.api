@@ -1,4 +1,20 @@
-from flask import Flask, request
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# Define your data offers
+offers = [
+    {"id": 1, "data": "350MB", "price": 49, "validity": "24hrs"},
+    {"id": 2, "data": "250MB", "price": 20, "validity": "24hrs"},
+    {"id": 3, "data": "160MB", "price": 15, "validity": "24hrs"},
+    {"id": 4, "data": "1GB", "price": 99, "validity": "24hrs"},
+    {"id": 5, "data": "2GB", "price": 100, "validity": "Till midnight"},
+]
+
+# Endpoint to get the list of offers
+@app.route('/offers', methods=['GET'])
+def get_offers():
+    return jsonify({"status": "success", "offers": offers})from flask import Flask, request
 import time
 
 app = Flask(__name__)
